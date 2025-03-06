@@ -31,10 +31,10 @@ metadata:
   name: my-app
   namespace: default
 spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080  # Assure-toi que ce port est dans la plage 30000-32767
   selector:
     app: my-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-      nodePort: 30005
